@@ -1,0 +1,550 @@
+/* EthConnect - Created on Sep 17, 2017 */
+/* Reset CSS */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,embed,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,meter,nav,object,ol,output,p,pre,progress,q,rp,rt,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,xmp{border:0;font-size:100%;margin:0;padding:0}html,body{font-family: "SanFranciscoDisplay-Regular", Arial, sans-serif; color: #242424; font-size: 15px}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}b,strong{font-weight:bold}img{font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic}li{display:list-item;}ul li{ list-style: none;}table{border-collapse:collapse;border-spacing:0}th,td,caption{font-weight:normal;vertical-align:top;text-align:center}svg{overflow:hidden}a{text-decoration: none;color:#242424}input,textarea,a,select,option{outline:none!important}
+/* Fontface embed */
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Black';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Black.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Black.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Black.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Black.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Black.svg#SanFranciscoDisplay-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Bold';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Bold.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Bold.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Bold.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Bold.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Bold.svg#SanFranciscoDisplay-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Light';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Light.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Light.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Light.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Light.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Light.svg#SanFranciscoDisplay-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Heavy';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Heavy.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Heavy.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Heavy.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Heavy.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Heavy.svg#SanFranciscoDisplay-Heavy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Regular';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Regular.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Regular.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Regular.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Regular.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Regular.svg#SanFranciscoDisplay-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Medium';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Medium.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Medium.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Medium.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Medium.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Medium.svg#SanFranciscoDisplay-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Thin';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Thin.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Thin.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Thin.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Thin.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Thin.svg#SanFranciscoDisplay-Thin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Semibold';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Semibold.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Semibold.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Semibold.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Semibold.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Semibold.svg#SanFranciscoDisplay-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SanFranciscoDisplay-Ultralight';
+  src: url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Ultralight.eot#iefix') format('embedded-opentype'),  url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Ultralight.otf')  format('opentype'),
+	     url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Ultralight.woff') format('woff'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Ultralight.ttf')  format('truetype'), url('/web/20180113055653im_/https://ethconnect.net/fonts/SanFranciscoDisplay-Ultralight.svg#SanFranciscoDisplay-Ultralight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Master CSS */
+*{margin:0;padding:0}
+img{border:0}
+body{font-family: "SanFranciscoDisplay-Regular", Arial, sans-serif; color:#242424;font-size: 15px;position: relative;background-size: cover;letter-spacing: 0.15px;}
+strong{font-family: "SanFranciscoDisplay-Bold", sans-serif;font-weight: 100;}
+h1,h2,h3,h4,h5,h6{font-family: "SanFranciscoDisplay-Bold", sans-serif;font-weight: 100;}
+
+.float-left{float:left}
+.float-right{float:right}
+.inn{width:1170px;margin:auto}
+.clear{width:100%;height:0px;clear:both}
+.spacer1{width:100%;height:1px;clear:both}
+.spacer2{width:100%;height:2px;clear:both}
+.spacer3{width:100%;height:3px;clear:both}
+.spacer4{width:100%;height:4px;clear:both}
+.spacer5{width:100%;height:5px;clear:both}
+.spacer6{width:100%;height:6px;clear:both}
+.spacer7{width:100%;height:7px;clear:both}
+.spacer8{width:100%;height:8px;clear:both}
+.spacer9{width:100%;height:9px;clear:both}
+.spacer10{width:100%;height:10px;clear:both}
+.spacer15{width:100%;height:15px;clear:both}
+.spacer20{width:100%;height:20px;clear:both}
+.spacer25{width:100%;height:25px;clear:both}
+.fLeft{float:left!important;}
+.fRight{float:right!important;}
+.noMar{margin:0!important;}
+.noMarTop{margin-top:0!important;}
+.noMarBtm{margin-bottom:0!important;}
+.noMarLeft{margin-left:0!important;}
+.noMarRight{margin-right:0!important;}
+.noPad{padding:0!important;}
+.noPadTop{padding-top:0!important;}
+.noPadBtm{padding-bottom:0!important;}
+.noPadLeft{padding-left:0!important;}
+.noPadRight{padding-right:0!important;}
+.noBor{border:none!important;}
+a img{border:none;outline:none;}
+.abs{position:absolute!important;}
+.rel{position:relative!important;}
+.inner{margin:auto;width: 1150px;}
+.content .box{
+  max-width: 260px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+}
+.content .box1 h4{
+      padding-top: 40px;
+    background: url("/web/20180113055653im_/https://ethconnect.net/assets/img/ico-percent.png") center top no-repeat;
+    -webkit-background-size: 29px 25px;
+    -o-background-size: 29px 25px;
+    background-size: 29px 25px;
+}
+.content .box{
+      margin: 0 30px 23px;
+    font: 18px/140% "Open Sans Bold", Arial, Helvetica, sans-serif;
+}
+.content .or {
+    display: block;
+    width: 210px;
+    height: 56px;
+    margin: 0 auto 46px;
+    background: url(/web/20180113055653im_/https://ethconnect.net/assets/img/ico-or.png) center center no-repeat;
+    -webkit-background-size: 210px 54px;
+    -o-background-size: 210px 54px;
+    background-size: 210px 54px;
+    font: 14px/56px "Open Sans Bold", Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+.content .box2{
+    margin-bottom: 55px;
+}
+a,img{-webkit-transition: all 100ms ease 0s;
+-moz-transition: all 100ms ease 0s;
+-o-transition: all 100ms ease 0s;
+transition: all 100ms ease 0s;}
+a,button{-webkit-transition: all 100ms ease 0s;
+-moz-transition: all 100ms ease 0s;
+-o-transition: all 100ms ease 0s;
+transition: all 100ms ease 0s;}
+
+input,textarea,a,select,option{-webkit-appearance: none;-moz-appearance: none;appearance: none;font-family: "SanFranciscoDisplay-Regular", Arial, sans-serif;font-size: 15px;}
+.center{width: 0px;height: 100%;position: absolute;left: 50%;top: 0;}
+
+/*Content*/
+.content{font-size:18px; color: #555;}
+.content img{display: inline-block;margin:0 auto 20px;text-align: center;max-width: 100%;height: auto;}
+.content ul{padding-left:20px;margin-bottom:20px;}
+.content ul li{line-height:20px;list-style:disc!important;margin-bottom: 10px;}
+.content ol li{margin-left:18px;margin-bottom: 10px;line-height: 20px;}
+.content a:hover{text-decoration:underline;}
+.content p{margin-bottom:20px;font-weight: lighter;line-height: 22px;}
+.content h1,.content h2,.content h3,.content h4,.content h5,.content h6{margin-bottom: 20px;}
+.content h1{font-size:19px;}
+.content h2{font-size:18px;}
+.content h3{font-size:17px;}
+.content h4{font-size:16px;}
+.content h5{font-size:15px;}
+.content h6{font-size:14px;}
+.content table{border:1px solid #242424;}
+.content table td,.content table th{padding:15px 10px;border:1px solid #ebebeb;}
+.content table th{background:#F2F2F2;font-family: "SanFranciscoDisplay-Bold", sans-serif;}
+.align-left{text-align: left!important;}
+.align-right{text-align: right!important;}
+.align-center{text-align: center!important;}
+.align-justify{text-align: justify!important;}
+
+
+.inner{width: 1280px;margin: auto;}
+#block-top{height: 100px;color: #fff;background: url(/web/20180113055653im_/https://ethconnect.net/images/block-top.png) #252525 no-repeat center;position: fixed;top: 0;left: 0;z-index: 1000;width: 100%;
+-webkit-transition: all 100ms ease 0s;
+-moz-transition: all 100ms ease 0s;
+-o-transition: all 100ms ease 0s;
+transition: all 100ms ease 0s;}
+.top-logo{float: left;height: 100px;line-height: 100px;width: 300px;}
+.top-logo h1{}
+.top-logo h1 a{}
+.top-logo h1 a img{}
+.top-nav{float: left;padding-top: 20px;margin-left: 70px;
+-webkit-transition: all 100ms ease 0s;
+-moz-transition: all 100ms ease 0s;
+-o-transition: all 100ms ease 0s;
+transition: all 100ms ease 0s;}
+ul.top-menu{font-size: 0;}
+ul.top-menu li{display: inline-block;color: #fff;}
+ul.top-menu li a{font-size: 16px;font-family: 'SanFranciscoDisplay-Bold', sans-serif; color: #fff;display: block;height: 60px;line-height: 60px;padding: 0 15px;}
+ul.top-menu li a:hover,ul.top-menu li a.top-menu-active{background: #3b3b3b;}
+
+a.join-btn{height: 56px!important;line-height: 56px!important;border: 2px solid #6ec63f!important;color: #6ec63f!important;margin-left: 20px!important;}
+a.join-btn:hover{background: #6ec63f!important;color: #fff!important;}
+
+
+
+
+.top-langs{float: right;height: 40px;color: #fff;padding-top: 30px;position: relative;
+-webkit-transition: all 100ms ease 0s;
+-moz-transition: all 100ms ease 0s;
+-o-transition: all 100ms ease 0s;
+transition: all 100ms ease 0s;}
+.top-langs a{color: #fff;}
+a.choose-lang{height: 40px;line-height: 40px;padding-left: 40px;}
+.flag-en{background: url(/web/20180113055653im_/https://ethconnect.net/images/flag-en.png) transparent no-repeat left;background-size: contain;}
+.flag-jp{background: url(/web/20180113055653im_/https://ethconnect.net/images/flag-jp.png) transparent no-repeat left;background-size: contain;}
+
+ul.list-lang{display: none;position: absolute;background: #000;right: 0;top: 70px;
+-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);}
+ul.list-lang a{display: block;width: 120px;text-align: center;height: 40px;line-height: 40px;font-size: 14px;}
+ul.list-lang a:hover{background: #3b3b3b;}
+
+#block-banner{height: 600px;width: 100%;overflow: hidden;position: relative;margin-top: 100px;}
+#canvas{width: 100%;height: 600px;position: absolute;z-index: 0;background: #6ec73e;top: 0;left: 0;}
+#block-banner .inner{position: relative;z-index: 20;}
+
+.banner-text{text-align: center;color: #fff;width: 540px;margin: auto;font-size: 18px;line-height: 25px;}
+
+.banner-buttons{color: #fff;text-align: center;}
+.banner-buttons ul{font-size: 0;}
+.banner-buttons ul li{font-size: 0;display: inline-block;margin: 0 5px;}
+.banner-buttons ul li a.banner-btn{display: block;font-size: 18px;height: 48px;line-height: 48px;border: 1px solid #fff;font-family: 'SanFranciscoDisplay-Light', sans-serif;width: 158px;background: #fff;text-align: center;color: #6fcb34;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;}
+.banner-btn-o{display: block;font-size: 18px;height: 48px;line-height: 48px;border: 1px solid #fff;font-family: 'SanFranciscoDisplay-Light', sans-serif;width: 158px;background: none;text-align: center;color: #fff ;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;}
+.banner-btn-o:hover{background: #fff;color: #6fcb34;}
+
+.banner-rates{text-align: center;color: #fff;}
+.banner-rates ul{font-size: 0;}
+.banner-rates ul li{font-size: 18px;display: inline-block;margin: 0 15px;height: 40px;line-height: 40px;}
+
+.banner-countdown{color: #fff;width: 580px;margin: auto;margin-top: 25px;margin-bottom: 21px;}
+.countdown-left{height: 60px;float: left;line-height: 60px;color: #fff;}
+.countdown-left h3{font-size: 30px;}
+.countdown-right{float: right;}
+.countdown-block{width: 60px;float: left;}
+.countdown-sep{width: 20px;float: left;height: 60px;line-height: 60px;font-size: 30px;color: #fff;text-align: center;}
+.countdown-block-main{width: 60px;height: 60px;text-align: center;line-height: 60px;color: #6fcb34;background: url(/web/20180113055653im_/https://ethconnect.net/images/countdown-block.png) transparent no-repeat center;background-size: contain;font-size: 30px;}
+.countdown-block span{display: block;text-align: right;font-size: 14px;color: #fff;margin-top: 3px;}
+.banner-member-count{    text-align: center;color: #fff;font-size: 28px;margin-top: 30px;}
+
+#block-footer{padding-top: 30px;padding-bottom: 50px;background: #6dc734;color: #fff;}
+#move-top{display: none;width: 50px;height: 50px;background: #92d567;color: #fff;text-align: center;line-height: 50px;position: fixed;z-index: 2000;bottom: 22px;right: 87px;cursor: pointer;font-size: 20px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;}
+.footer-left{width: 35%; float: left;}
+.footer-left p{font-size: 18px;line-height: 25px;}
+.footer-right{width: 65%;float: left;font-size: 18px;}
+.footer-nav{width: 100%;margin-bottom: 30px;float: left;}
+ul.footer-menu{font-size: 0;}
+ul.footer-menu li{font-size: 18px;line-height: 25px;display: inline-block;margin-right: 20px;}
+ul.footer-menu li a{font-size: 18px;color: #fff;font-family: 'SanFranciscoDisplay-Bold', sans-serif;}
+.footer-download{float: left;}
+.footer-download p{font-size: 14px;line-height: 20px;color: #fff;}
+.footer-download a{display: block;float: left;margin-right: 10px;}
+.footer-map{width: 300px;float: right;margin-top: -60px;}
+#block-subscribe{padding: 100px 0;background: url(/web/20180113055653im_/https://ethconnect.net/images/block-subscribe.jpg) #fff no-repeat center;}
+.subscribe-wrp{width: 600px;margin-left: 50px;}
+.block-header{width: 100%;clear: both;}
+.block-header h2{font-size: 30px;color: #000;}
+span.green-line{width: 70px;height: 5px;background: #6dc734;float: left;display: block;}
+.subscribe-header{position: relative;}
+.icon-mail{position: absolute;left: -40px;top: 6px;}
+.subscribe-content{}
+.subscribe-inp{display: block;float: left;width: 60%;padding: 0 3%;background: #ebebeb;height: 50px;line-height: 50px;border: none;font-size: 18px;
+-webkit-border-top-left-radius: 3px;
+-webkit-border-bottom-left-radius: 3px;
+-moz-border-radius-topleft: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;}
+.subscribe-inp:focus{background: #e2e2e2;}
+.subscribe-btn{display: block;width: 34%;height: 50px;float: left;line-height: 50px;text-align: center;background: #6dc734;color: #fff;font-family: 'SanFranciscoDisplay-Bold', sans-serif;font-size: 18px;border: none;cursor: pointer;outline: none;
+-webkit-border-top-right-radius: 3px;
+-webkit-border-bottom-right-radius: 3px;
+-moz-border-radius-topright: 3px;
+-moz-border-radius-bottomright: 3px;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;}
+.subscribe-btn:hover{background: #58bd18;}
+
+#block-team{padding: 70px 0 100px;background: url(/web/20180113055653im_/https://ethconnect.net/images/graph.png) #f8f8f8 no-repeat center;}
+.block-header-center{margin: auto;text-align: center;}
+.block-header-center h2{text-align: center;}
+.block-header-center .green-line{float: none;margin: auto;}
+
+ul.our-team{font-size: 0;text-align: center;margin-top: 70px;}
+ul.our-team li{width: 19%;display: inline-block;text-align: center;vertical-align: top;}
+.member{font-size: 18px;}
+.member-photo{margin-bottom: 18px;}
+.member-bio{text-align: center;}
+.member-bio h3{ font-weight: bold;margin-bottom: 5px;}
+.member-bio p{margin-bottom: 10px;}
+.member-bio p span{font-family: 'SanFranciscoDisplay-Thin', sans-serif;}
+
+#block-roadmap{padding: 40px 0 50px;background: #ebebeb ;text-align: center;}
+#block-roadmap img{max-width: 90%;}
+#block-application{padding: 40px 0 70px;background: #fff;text-align: center;}
+#block-application img.app-photo{max-width: 75%;}
+ul.platform-tabs{text-align: center;}
+ul.platform-tabs li{font-size: 0;display: inline-block;font-size: 18px;}
+ul.platform-tabs li a{display: block;height: 35px;line-height: 35px;color: #000;font-family: 'SanFranciscoDisplay-Bold',sans-serif;font-size: 18px;padding: 0 15px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;}
+ul.platform-tabs li a.platform-tab-active{background: #6dc734;color: #fff;}
+.platform-panel{display: none;}
+.platform-panel ul{text-align: center;font-size: 0;}
+.platform-panel ul li{display: inline-block;font-size: 18px;margin: 0 5px;}
+.platform-panel ul li a{}
+#platform-panel-1{display: block;}
+
+#block-affiliate{padding: 70px 0 100px;background: url(/web/20180113055653im_/https://ethconnect.net/images/graph.png) #fff no-repeat center;}
+.affiliate-left{width: 60%;float: left;}
+.affiliate-right{width: 35%;float: right;text-align: right;}
+.affiliate-right img{max-width: 100%;}
+.affiliate-content{text-align: justify;}
+
+#block-invest{padding: 100px 0 100px;background: url(/web/20180113055653im_/https://ethconnect.net/images/block-invest.jpg) transparent no-repeat center;}
+.invest-main{width: 830px;float: right;}
+.invest-content{}
+.invest-item{width: 185px;height: 270px;float: left;margin-right: 30px;position: relative;}
+#invest-item-1{background: url(/web/20180113055653im_/https://ethconnect.net/images/invest-item-1.png) transparent no-repeat center top;background-size: contain;}
+#invest-item-2{background: url(/web/20180113055653im_/https://ethconnect.net/images/invest-item-2.png) transparent no-repeat center top;background-size: contain;}
+#invest-item-3{background: url(/web/20180113055653im_/https://ethconnect.net/images/invest-item-3.png) transparent no-repeat center top;background-size: contain;}
+#invest-item-4{background: url(/web/20180113055653im_/https://ethconnect.net/images/invest-item-4.png) transparent no-repeat center top;background-size: contain;margin-right: 0;}
+.invest-item-above{position: absolute;width: 95px;height: 95px;text-align: center;line-height: 95px;color: #fff;top: 0;left: 0;}
+.invest-item-above a{color: #fff;font-size: 18px;font-family: 'SanFranciscoDisplay-Bold',sans-serif;}
+.invest-item-below{width: 145px;position: absolute;text-align: center;left: 20px;top: 120px;}
+.invest-item-below a{font-size: 18px;text-align: center;}
+
+#block-green{background: #6dc734;color: #fff;}
+.green-left{padding: 70px 0 100px;width: 60%;float: left;margin-right: 5%;color: #fff;}
+.green-right{width: 25%;float: left;padding: 70px 5% 100px;color: #fff;
+background: rgba(93,140,217,1);
+background: -moz-linear-gradient(top, rgba(93,140,217,1) 0%, rgba(109,199,52,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(93,140,217,1)), color-stop(100%, rgba(109,199,52,1)));
+background: -webkit-linear-gradient(top, rgba(93,140,217,1) 0%, rgba(109,199,52,1) 100%);
+background: -o-linear-gradient(top, rgba(93,140,217,1) 0%, rgba(109,199,52,1) 100%);
+background: -ms-linear-gradient(top, rgba(93,140,217,1) 0%, rgba(109,199,52,1) 100%);
+background: linear-gradient(to bottom, rgba(93,140,217,1) 0%, rgba(109,199,52,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d8cd9', endColorstr='#6dc734', GradientType=0 );}
+.green-left .content,.green-right .content{color: #fff;}
+.green-left .content{text-align: justify;}
+.green-right .content{text-align: center;}
+#block-green .block-header h2{color: #fff;}
+#block-green .green-line{background: #fff;}
+.green-right-content h2{font-size: 30px;text-align: center;}
+
+#block-about{padding: 100px 0 50px;background: url(/web/20180113055653im_/https://ethconnect.net/images/block-about.jpg) transparent no-repeat center;}
+.about-main{width: 830px;float: right;}
+#block-about .block-header{position: relative;}
+.icon-about{width: 21px;height: 29px;background: url(/web/20180113055653im_/https://ethconnect.net/images/icon-about.png) transparent no-repeat center;background-size: contain;position: absolute;top: 4px;left: -35px;}
+ul.about-tabs{text-align: center;font-size: 0;}
+ul.about-tabs li{display: inline-block;font-size: 18px;margin: 0 5px;}
+ul.about-tabs li a{font-size: 18px;color: #c2c2c2;display: block;width: 36px;height: 39px;line-height: 39px;text-align: center;background: url(/web/20180113055653im_/https://ethconnect.net/images/about-tab.png) transparent no-repeat center;background-size: contain;font-family: 'SanFranciscoDisplay-Bold',sans-serif;}
+ul.about-tabs li a.about-tab-active{color: #6dc734;background-image:url(/web/20180113055653im_/https://ethconnect.net/images/about-tab-active.png);}
+.about-panels{}
+.about-slider-wrp{position: relative;}
+.about-content{}
+.about-content h3{font-size: 30px;color: #6dc734;margin-bottom: 30px;}
+.about-content-wrp{text-align: justify;height: 430px;overflow: auto;}
+.about-slider-prev{display: block;position: absolute;top: auto;left: -40px;text-align: left;width: 40px;height: 300px;bottom: 0;font-size: 50px;color: #ebebeb;line-height: 300px;}
+.about-slider-next{display: block;position: absolute;top: auto;right: -40px;text-align: right;width: 40px;height: 300px;bottom: 0;font-size: 50px;color: #ebebeb;line-height: 300px;}
+.about-slider-prev:hover,.about-slider-next:hover{color: #ccc;}
+
+#block-ico{padding: 70px 0 70px;background: url(/web/20180113055653im_/https://ethconnect.net/images/block-ico.jpg) transparent no-repeat center;}
+.ico-main{width: 720px;float: left;}
+.ico-slider-wrp{position: relative;}
+ul.ico-tabs{text-align: center;}
+ul.ico-tabs li{font-size: 0;display: inline-block;font-size: 18px;}
+ul.ico-tabs li a{display: block;height: 35px;line-height: 35px;color: #000;font-family: 'SanFranciscoDisplay-Bold',sans-serif;font-size: 18px;padding: 0 15px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;}
+ul.ico-tabs li a.ico-tab-active{background: #6dc734;color: #fff;}
+.ico-content{text-align: justify;height: 560px;overflow: auto;}
+.ico-slider-prev{display: block;position: absolute;top: auto;left: -40px;text-align: left;width: 40px;height: 500px;bottom: 0;font-size: 50px;color: #ebebeb;line-height: 500px;}
+.ico-slider-next{display: block;position: absolute;top: auto;right: -40px;text-align: right;width: 40px;height: 500px;bottom: 0;font-size: 50px;color: #ebebeb;line-height: 500px;}
+.ico-slider-prev:hover,.ico-slider-next:hover{color: #ccc;}
+.ico-content img{max-width: 100%;}
+
+.mobile-toggle{display: none;position: fixed;width: 60px;height: 60px;text-align: center;line-height: 60px;background: #3b3b3b;font-size: 20px;color: #fff;top: 20px;right: 20px;cursor: pointer;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;}
+.mobile-wrp{display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 2000;background: rgba(0,0,0,0.9);}
+.mobile-inner{width: 280px;margin: auto;padding-top: 50px;}
+ul.mobile-menu{}
+ul.mobile-menu li{border-bottom: 1px solid #444;}
+ul.mobile-menu li a{font-size: 18px;color: #fff;padding: 15px 10px;display: block;font-family: "SanFranciscoDisplay-Bold", sans-serif;}
+.mobile-close{display: block;width: 50px;height: 50px;top: 0;right: 0;position: absolute;color: #f00;text-align: center;line-height: 50px;font-size: 30px;background: #444;cursor: pointer;}
+ul.mobile-lang{font-size: 0;text-align: center;margin-top: 20px;}
+ul.mobile-lang li{display: inline-block;vertical-align: top;font-size: 14px;width: 49%;}
+ul.mobile-lang li a{display: block;width: 100%;height: 35px;line-height: 35px;color: #fff;}
+.mobile-lang-active{background: #444;}
+
+
+.stick-top{height: 60px!important;}
+.stick-top .top-logo{height: 60px;line-height: 60px;}
+.stick-top .top-logo h1 a img{height: 40px;width: auto;}
+.stick-top .top-nav{padding-top: 0;}
+.stick-top .top-langs{padding-top: 10px;}
+.stick-top ul.list-lang{top: 60px;}
+.stick-top .mobile-toggle{top: 0;right: 0;}
+
+/* Show for 720px */
+@media screen and (min-width: 750px) and (max-width: 1300px){
+    .inner{width: 720px;}
+    .top-logo h1 a img{height: 40px;width: auto;}
+    .top-nav{margin-left: 15px;}
+    ul.top-menu li a{font-size: 12px;padding: 0 10px;}
+    a.choose-lang{font-size: 12px;padding-left: 30px;}
+    .about-main{width: 720px;}
+    #block-about{ padding: 50px 0 50px;background-position: right center;}
+    #block-ico{padding: 50px 0 50px;background-position: left center;}
+    #block-invest{ padding: 50px 0 50px;background-position: right center;}
+    .invest-main{width: 720px;}
+    .green-left{padding: 50px 0;}
+    .green-right{ padding: 50px 5%;}
+    .invest-item{width: 165px;margin-right: 20px;}
+    .invest-item-above{width: 90px;height: 90px;line-height: 90px;}
+    .invest-item-below {width: 165px;position: absolute;text-align: center;left: 0;top: 100px;}
+    #block-affiliate {padding: 50px 0;}
+    .affiliate-left{width: 50%;}
+    .affiliate-right{width: 45%;}
+    #block-roadmap {padding: 50px 0 50px;}
+    #block-roadmap img {max-width: 100%;}
+    #block-application{padding: 50px 0;}
+    #block-team {padding: 50px 0;}
+    ul.our-team{margin-top: 30px;}
+    ul.our-team li{width: 33%;margin-bottom: 20px;}
+    #block-subscribe{padding: 50px 0;}
+    .subscribe-wrp{width: 720px;margin: auto;}
+    .footer-left {width: 100%;float: none;text-align: center;margin-bottom: 30px;}
+    .footer-right {width: 100%;float: none;font-size: 18px;text-align: center;}
+    .footer-download a {display: inline-block;float: none;}
+    
+    .top-nav{display: none;}
+    .top-langs{display: none;}
+    .mobile-toggle{display: block;}
+}
+/* Show for 100% */
+@media screen and (max-width: 750px){
+    /*#canvas{display: none};*/
+    .inner{width: 90%;}
+    .top-logo h1 a img{height: 40px;width: auto;}
+    .top-nav{display: none;}
+    .top-langs{display: none;}
+    #block-banner{height: auto;padding-bottom: 30px;}
+    #canvas{height: 100%;}
+    .banner-text{width: 100%;}
+    .banner-text img{width: 60px;height: auto;}
+    .banner-text{font-size: 15px;line-height: 20px;}
+    .banner-buttons ul li{width: 30%;margin: 0 1%;}
+    .banner-buttons ul li a.banner-btn{width: 100%;font-size: 15px;}
+    .banner-btn-o{width: 100%;font-size: 15px;}
+    .banner-countdown{margin: 30px 0;width: 100%;}
+    .countdown-left{width: 100%;text-align: center;}
+    .countdown-right{width: 300px;float: none;margin: auto;}
+    .banner-rates{width: 220px;margin: auto;text-align: left;}
+    .banner-rates ul li{font-size: 15px;margin-bottom: 5px;}
+    .about-main{width: 100%;}
+    .icon-about{display: none;}
+    .about-slider-direction-nav{display: none;}
+    #block-about{ padding: 50px 0 50px;background-position: right center;}
+    #block-ico{padding: 50px 0 50px;background-position: left center;}
+    #block-invest{ padding: 50px 0 50px;background-position: right center;background: #f9fafc;}
+    .invest-main{width: 100%;}
+    .green-left{padding: 50px 0;width: 100%;}
+    .green-right{ padding: 50px 5%;width: 90%;}
+    .ico-main{width: 100%;}
+    .ico-slider-direction-nav{display: none;}
+    .invest-item{margin: 0 auto 10px!important;float: none;}
+    #block-affiliate {padding: 50px 0;}
+    .affiliate-left{width: 100%;}
+    .affiliate-right{width: 100%;}
+    #block-roadmap {padding: 50px 0 50px;}
+    #block-roadmap img {max-width: 100%;}
+    #block-application{padding: 50px 0;}
+    #block-team {padding: 50px 0;}
+    ul.our-team{margin-top: 30px;}
+    ul.our-team li{width: 39%;margin: 0 5% 20px;}
+    #block-subscribe{padding: 50px 0;}
+    .subscribe-wrp{width: 100%;margin: auto;}
+    .footer-left {width: 100%;float: none;text-align: center;margin-bottom: 30px;}
+    .footer-right {width: 100%;float: none;font-size: 18px;text-align: center;}
+    .footer-download a {display: inline-block;float: none;}
+    #block-application img.app-photo{max-width: 100%;}
+    .member-photo img{width: 100%;height: auto;}
+    #move-top{display: none!important;}
+    .icon-mail{display: none;}
+    .mobile-toggle{display: block;}
+    .footer-nav{float: inherit;}
+    .footer-download{float: inherit;}
+    .footer-map{float: inherit;margin: 5px auto;}
+}
+.footer-address{
+    margin-bottom: 10px;
+}
+.footer-social{
+  margin-top: 20px;
+}
+/*
+     FILE ARCHIVED ON 05:56:53 Jan 13, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:40:51 Jun 20, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 61.062 (3)
+  esindex: 0.006
+  captures_list: 75.088
+  CDXLines.iter: 10.727 (3)
+  PetaboxLoader3.datanode: 63.406 (4)
+  exclusion.robots: 0.375
+  exclusion.robots.policy: 0.365
+  RedisCDXSource: 0.595
+  PetaboxLoader3.resolve: 32.32
+  load_resource: 50.771
+*/
